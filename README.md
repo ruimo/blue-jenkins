@@ -21,7 +21,15 @@ https://console.ng.bluemix.net/docs/containers/container_cli_reference_cfic.html
 
 # Usage
 
-Rename the run.sh.sample to run.sh and reflect your account information.
+Rename build.sh.sample to build.sh and reflect your account information.
+
+```
+$ cf ic build -t YOUR_DOCKER_NAMESPACE/blue-jenkins .
+```
+
+Where YOUR_DOCKER_NAMESPACE is your own docker private registry name space in Bluemix. Add execute bit (chmod +x build.sh) and run this script to create your own Jenkins image in your private docker registry on Bluemix.
+
+Once the image is build, Rename the run.sh.sample to run.sh and reflect your account information.
 
 ```
 $ cf ic group create --name YOUR_HOST_NAME -p 8080 -m 2048 -v jenkins:/var/jenkins_home --min 1 --max 1 --desired 1 -n YOUR_CONTAINER_NAME -d mybluemix.net registry.ng.bluemix.net/YOUR_DOCKER_NAMESPACE/blue-jenkins
