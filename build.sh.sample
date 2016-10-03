@@ -1,1 +1,1 @@
-cf ic build -t YOUR_DOCKER_NAMESPACE/blue-jenkins .
+docker build -t YOUR_DOCKER_NAMESPACE/blue-jenkins .
